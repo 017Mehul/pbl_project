@@ -12,129 +12,169 @@
         body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* TIMER UI - FIXED CONTRAST */
         #timerContainer { background: #ffffff; color: #020617; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 3px solid #3b82f6; z-index: 1000; }
         @keyframes flicker { 0%, 100% { background-color: #ffffff; } 50% { background-color: #fca5a5; } }
         .timer-warning { animation: flicker 1s infinite; border: 3px solid #ef4444 !important; color: #b91c1c !important; }
         .timer-stop { background-color: #991b1b !important; color: #ffffff !important; border: 3px solid #f87171 !important; animation: none; }
     </style>
 </head>
-
 <body onload="startTimer()">
 
-<div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
-    <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
-    <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
-</div>
-
-<main class="max-w-6xl mx-auto px-6 pt-32 pb-32 space-y-32">
-
-<section class="text-center">
-    <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">
-        ID: 23FE10CSE00518
+    <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
+        <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
+        <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
     </div>
 
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-8 uppercase leading-tight">
-        <span class="gradient-text">
-            Stealthy Low-Rate Temporal Adversarial Attacks on Dynamic Transaction Graphs for Robust GNN-Based Fraud Detection
-        </span>
-    </h1>
-
-    <p class="text-slate-400 max-w-3xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
-        We hypothesize that even low-rate, temporally distributed adversarial injections in dynamic transaction graphs can significantly degrade the performance of Graph Neural Network (GNN) based fraud detection systems.
-    </p>
-</section>
-
-<section id="methodology" class="space-y-12">
-    <h2 class="text-4xl font-black text-center uppercase tracking-tight">
-        System <span class="text-blue-500">Methodology</span>
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="glass p-8 rounded-3xl text-center">
-            <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset</h3>
-            <p class="text-sm text-slate-500">
-                Elliptic Bitcoin Transaction Dataset
-            </p>
-        </div>
-
-        <div class="glass p-8 rounded-3xl text-center">
-            <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model</h3>
-            <p class="text-sm text-slate-500">
-                Graph Convolutional Network (GCN)<br>
-                Dynamic GCN + GRU Architecture
-            </p>
-        </div>
-
-        <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
-            <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
-            <a href="https://github.com/017Mehul/stealth-temporal-graph-attacks" 
-               target="_blank"
-               class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">
-                VIEW CODE / DEMO
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
-    <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">
-        Results & <span class="text-blue-500">Analysis</span>
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="h-80">
-            <canvas id="resultsChart"></canvas>
-        </div>
-
-        <div>
-            <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10">
-                <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">
-                    Accuracy
-                </span>
-                <span class="text-blue-400 font-mono font-black text-3xl">
-                    92% → 70%
-                </span>
+    <nav class="fixed w-full z-50 glass border-b border-slate-800/50 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="bg-white p-1 rounded flex items-center justify-center shadow-md" style="height: 48px; width: 48px;">
+                <img src="mujlogo.jpg" alt="MUJ" class="h-full w-auto object-contain" onerror="this.src='https://via.placeholder.com/50?text=MUJ'">
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-xl font-black text-white leading-none uppercase tracking-tighter">PBL <span class="text-blue-500 italic">2026</span></span>
+                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">Dept. of Computer Science & Engineering</span>
             </div>
         </div>
-    </div>
-</section>
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-bold opacity-70">
+            <a href="#problem" class="hover:text-blue-400 transition">Problem</a>
+            <a href="#methodology" class="hover:text-blue-400 transition">Methodology</a>
+            <a href="#results" class="hover:text-blue-400 transition">Results</a>
+            <a href="#team" class="hover:text-blue-400 transition">Team</a>
+        </div>
+    </nav>
 
-</main>
+    <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
+        
+        <section class="text-center">
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: [23FE10CSE00518]</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">[Stealthy Temporal Attacks on Dynamic Graph Fraud Detection]</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
+                "We hypothesize that low-rate, temporally distributed adversarial injections in dynamic transaction graphs can significantly degrade the performance of Graph Neural Network (GNN) based fraud detection systems. Unlike high-volume perturbations, stealthy gradual injections may evade detection mechanisms while progressively manipulating model predictions over time.
+."
+            </p>
+        </section>
 
-<script>
-let sec = 0;
-function startTimer() {
-    setInterval(() => {
-        sec++;
-        let m = Math.floor(sec / 60);
-        let s = sec % 60;
-        document.getElementById('displayTime').innerText =
-            `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-    }, 1000);
-}
+        <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
+            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
+                <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
+                <p class="text-slate-400 leading-relaxed text-justify">Modern fraud detection systems rely heavily on Graph Neural Networks (GNNs) to analyze dynamic transaction relationships in financial networks. While these models perform well under normal conditions, their robustness against realistic adversarial behavior remains unclear. In real-world financial systems, attackers rarely launch large, obvious attacks; instead, they inject small, temporally distributed transactions to evade detection. The primary challenge is understanding how such stealthy, low-rate temporal adversarial manipulations impact dynamic GNN-based fraud detection systems. This project is necessary to evaluate whether current fraud detection models are truly robust against realistic, gradual attack strategies that occur in practice.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
+                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review / Market Research</h3>
+                    <p class="text-sm text-slate-500 italic">Existing research applies Graph Neural Networks (GCNs, GraphSAGE, GAT) for fraud detection on transaction graphs like the Elliptic dataset, achieving strong results in static settings. Separately, adversarial attack studies explore edge perturbations and node injections on GNNs, mainly in static graphs. Dynamic GNN models have been proposed, but realistic low-rate temporal adversarial attacks on fraud detection systems remain largely underexplored.</p>
+                </div>
+                <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
+                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap / Innovation</h3>
+                    <p class="text-sm text-slate-500 italic">Existing studies primarily focus on static graph attacks or high-rate perturbations that do not reflect realistic fraud behavior. Our approach models low-rate, temporally distributed adversarial attacks on dynamic transaction graphs, better simulating real-world fraud evolution. This allows systematic evaluation of robustness degradation over time, making the framework more practical and realistic than prior work</p>
+                </div>
+            </div>
+        </section>
 
-const ctx = document.getElementById('resultsChart').getContext('2d');
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Baseline (No Attack)', 'Under Stealth Attack'],
-        datasets: [{
-            data: [92, 70],
-            backgroundColor: ['#3b82f6', '#ef4444'],
-            borderRadius: 12
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: {
-            y: { beginAtZero: true }
+        <section id="methodology" class="space-y-12">
+            <h2 class="text-4xl font-black text-center uppercase tracking-tight">System <span class="text-blue-500">Methodology</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
+                    <p class="text-sm text-slate-500">[Elliptic Bitcoin Transaction Dataset (1GB). Unknown labels removed, cumulative temporal graphs constructed, features normalized, and class imbalance handled using weighted loss with chronological split.]</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
+                    <p class="text-sm text-slate-500">[CN for static modeling and Dynamic GCN + GRU for temporal learning, with cumulative graph construction, weighted training, and adversarial evaluation workflow]</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
+                    <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
+                    <a href="[https://github.com/017Mehul/stealth-temporal-graph-attacks.git]" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
+            <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Results & <span class="text-blue-500">Analysis</span></h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="h-80"><canvas id="resultsChart"></canvas></div>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                    </div>
+                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="text-center pt-10 border-t border-slate-900">
+            <h2 class="text-[10px] font-black text-slate-600 uppercase tracking-[0.5em] mb-12">Academic Credits</h2>
+            <div class="flex flex-wrap justify-center gap-10">
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
+                    <p class="text-[9px] font-bold text-blue-500 mb-2 uppercase tracking-widest">Project Guide</p>
+                    <p class="font-black text-xl text-slate-100">[Dr.Jay Prakash Singh]</p>
+                </div>
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
+                    <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Team Member 1</p>
+                    <p class="font-black text-xl text-slate-100">[Mehul Gupta]</p>
+                    <p class="text-[10px] text-slate-500 mt-1">[23FE10CSE00518]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center bg-black/40 border-t border-slate-900">
+        <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Manipal University Jaipur</p>
+        <p class="text-slate-500 text-[9px] font-medium tracking-[0.2em] uppercase opacity-50">Department of Computer Science & Engineering • 2026</p>
+    </footer>
+
+    <script>
+        // TIMER LOGIC
+        let sec = 0;
+        let timer = null;
+        function startTimer() {
+            timer = setInterval(() => {
+                sec++;
+                let m = Math.floor(sec / 60);
+                let s = sec % 60;
+                document.getElementById('displayTime').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                
+                if (sec >= 480 && sec < 600) { // 8-10 Mins Warning
+                    document.getElementById('timerContainer').classList.add('timer-warning');
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-start', 'fa-hourglass-half');
+                } else if (sec >= 600) { // 10 Mins Stop
+                    clearInterval(timer);
+                    document.getElementById('timerContainer').classList.replace('timer-warning', 'timer-stop');
+                    document.getElementById('displayTime').innerText = "10:00";
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-half', 'fa-hourglass-end');
+                }
+            }, 1000);
         }
-    }
-});
-</script>
 
+        // RESULTS CHART (Demo Data)
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Existing System', 'Our Solution'],
+                datasets: [{
+                    data: [70, 92],
+                    backgroundColor: ['#1e293b', '#3b82f6'],
+                    borderRadius: 15,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    y: { beginAtZero: true, grid: { color: '#ffffff05' }, ticks: { color: '#475569' } },
+                    x: { grid: { display: false }, ticks: { color: '#475569' } }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
